@@ -1,0 +1,35 @@
+<div class="">
+  
+  <form [formGroup]="productAddForm" class="form"  (ngSubmit)="addProd()">
+      <h2> Formulaire</h2>
+      
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="floatingInput1" placeholder="entrer le nom produit" formControlName="nomControl">
+            <label for="floatingInput1">Nom produit</label>
+          </div>
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="floatingInput2" placeholder="entrer le prix" formControlName="prixControl">
+            <label for="floatingInput2" >Prix</label>
+          </div>
+        <div class="form-floating mb-3">
+            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea" formControlName="descControl" ></textarea>
+            <label for="floatingTextarea">description</label>
+          </div>
+        
+          <div class="mb-3">
+            <label for="formFile" class="form-label">Image du produit</label>
+            <input class="form-control" type="file" id="formFile" formControlName="imageControl">
+          </div>
+          <label for="categorie" class="form-label">Categorie</label>
+          <select class="form-select form-select-sm mb-3" aria-label=".form-select-sm example" id="categorie" formControlName="categControl" >
+            
+            <option value="categorie 1">categorie 1</option>
+            <option value="categorie 2">categorie 2</option>
+            <option value="categorie 3">categorie 3</option>
+            <option value="categorie 4">categorie 4</option>
+          </select>
+       
+        <button type="submit" class="btn btn-primary">Ajouter</button>
+    
+        </form>
+</div>

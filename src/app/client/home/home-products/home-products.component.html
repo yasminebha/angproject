@@ -1,0 +1,45 @@
+<h2>featured products</h2>
+<div class="d-flex justify-content-around">
+
+
+    <div class="container">
+        <div class="row">
+            
+            <div *ngFor="let prod of produits" class="col-md-4">
+                <div class="product-box"
+                >
+                
+                
+                <div class="product-inner-box position-relative">
+                    
+                    
+                    <img [src]="prod.image" [alt]="prod.nom" class="img-fluid "
+                    [ngbPopover]="prod.description"
+                    triggers="mouseenter:mouseleave"
+                    placement="bottom"
+                    popoverTitle="description" 
+                    (click)="onSelectedProd(prod)">
+                    <div class="cart-btn" >
+                        <button class="btn btn-white shadow-sm ">Add to cart</button>
+                    </div>
+            </div>
+            <div class="product-info">
+                <div class="product-name">
+                    <h3>{{prod.nom}}</h3>
+                </div>
+                <div class="product-price">
+                    <span>{{prod.prix}}</span>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+
+
+   
+<app-home-product-detail [prod]="selectedProd" *ngIf="selectedProd"  ></app-home-product-detail>
+
+</div>
+    
