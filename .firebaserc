@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "angproject-a66c3"
+  },
+  "targets": {
+    "angproject-a66c3": {
+      "hosting": {
+        "angproject": [
+          "angproject-a66c3"
+        ]
+      }
+    }
+  }
+}

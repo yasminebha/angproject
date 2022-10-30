@@ -1,17 +1,20 @@
-export class Produit {
-    id?: string;
-    nom?: string;
-    image?: string;
-    prix?: string;
+import { BaseModel } from "./base.model";
+
+export class Product extends BaseModel {
+
+    nom: string;
+    image?: string | File;
+    prix: number;
     description?: string;
-    categId: string;
-    
-    constructor(args: Produit ) {
-    this.id = args.id;
-    this.nom = args.nom;
-    this.image = args.image;
-    this.prix = args.prix;
-    this.categId = "test";
-    this.description = args.description;
-    }   
+    category_id: string;
+
+
+    constructor(args: Product) {
+        super()
+        this.nom = args.nom;
+        this.image = args.image;
+        this.prix = args.prix;
+        this.category_id = args.category_id;
+        this.description = args.description;
+    }
 }

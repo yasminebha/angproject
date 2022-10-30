@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { NgbTooltipConfig } from '@ng-bootstrap/ng-bootstrap';
 import { ProductService } from 'src/app/services/product.service';
 
-import { Produit } from 'src/app/shared/models/produit';
+import { Product } from 'src/app/shared/models/produit';
 
 
 
@@ -16,33 +15,30 @@ import { Produit } from 'src/app/shared/models/produit';
 
 export class HomeProductsComponent implements OnInit {
   title = "PRODUITS";
-  produits :Produit[] ;// a retoucher
-  selectedProd: Produit ;
-  
-  
- 
-  
-  constructor(private productService:ProductService ){
+  produits: Product[];// a retoucher
+  selectedProd: Product;
+
+  constructor(private productService: ProductService) {
     this.productService;
-    
   }
-  getProducts():void{
-    
-    this.produits= this.productService.getProducts();
+
+  async getProducts(): Promise<void> {
+    this.produits = await this.productService.getProducts();
   }
-  
-  
-  
+
+
+
   ngOnInit(): void {
     this.getProducts();
   }
-  onSelectedProd(p:Produit):void{
+
+  onSelectedProd(p: Product): void {
     this.selectedProd = p;
   }
- 
 
-  
-  onDetail(item:any):any{
+
+
+  onDetail(item: any): any {
     alert(item.description)
   }
 

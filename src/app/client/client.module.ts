@@ -1,11 +1,11 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core';
 
-import { ClientRoutingModule } from './client-routing.module';
 import { AboutModule } from './about/about.module';
-import { HomeModule } from './home/home.module';
-import { ClientComponent } from './client.component';
 import { BannerComponent } from './banner/banner.component';
+import { ClientRoutingModule } from './client-routing.module';
+import { ClientComponent } from './client.component';
+import { HomeModule } from './home/home.module';
 
 
 
@@ -19,9 +19,7 @@ import { BannerComponent } from './banner/banner.component';
     CommonModule,
     ClientRoutingModule,
     AboutModule,
-    HomeModule,
-    
-   
+    HomeModule
   ],
   exports: [
     ClientComponent

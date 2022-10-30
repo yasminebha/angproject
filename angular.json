@@ -23,7 +23,6 @@
               "src/assets"
             ],
             "styles": [
-           
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
@@ -92,10 +91,19 @@
               "src/assets"
             ],
             "styles": [
-              
               "src/styles.css"
             ],
             "scripts": []
+          }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "angproject:build:production",
+            "firebaseProject": "angproject-a66c3",
+            "firebaseHostingSite": "angproject-a66c3"
           }
         }
       }

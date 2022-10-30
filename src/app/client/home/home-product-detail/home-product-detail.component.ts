@@ -1,6 +1,6 @@
 
 import { Component, OnInit ,Input} from '@angular/core';
-import { Produit } from 'src/app/shared/models/produit';
+import { Product } from 'src/app/shared/models/produit';
 
 @Component({
   selector: 'app-home-product-detail',
@@ -15,5 +15,5 @@ export class HomeProductDetailComponent implements OnInit {
   ngOnInit(): void {
  
   };
-  @Input() prod!: Produit;
+  @Input() prod!: Product;
   }
