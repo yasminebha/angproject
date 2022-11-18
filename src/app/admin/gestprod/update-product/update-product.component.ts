@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CategoryService } from 'services/category.service';
 import { ProductService } from 'services/product.service';
@@ -19,17 +19,23 @@ export class UpdateProductComponent implements OnInit {
   categories: Array<Categorie> = []
 
   private imageFile: File
+  productUpdateForm: FormGroup;
 
-  constructor(private readonly fb: FormBuilder,
+  constructor(
+    private readonly fb: FormBuilder,
     private readonly productService: ProductService,
     private readonly categoryService: CategoryService,
     private readonly route: ActivatedRoute,
-    private readonly router: Router) { }
+    private readonly router: Router
+  ) {
+    // this.handleGetProduct = this.handleGetProduct.bind(this)
+  }
 
 
-  productUpdateForm: FormGroup;
+  // This function invokes when the component has initlized
   ngOnInit(): void {
 
+    // Initialize form goupe by defining the fields
     this.productUpdateForm = this.fb.group({
       nomControl: ["", [Validators.required]],
       prixControl: [0, [Validators.required]],
@@ -37,43 +43,52 @@ export class UpdateProductComponent implements OnInit {
       categControl: [NaN, [Validators.required]],
     })
 
-
+    // Get group controlles 
     this.control = this.productUpdateForm.controls;
 
-
-
-    const handleGetProduct = async (params) => {
-      this.isLoaded = false
-      this.item = await this.productService.getProductById(params.id)
-      this.productUpdateForm.patchValue({
-        nomControl: this.item.nom,
-        prixControl: this.item.prix,
-        descControl: this.item.description,
-        categControl: this.item.category_id
-      })
-      this.categories = await this.categoryService.getCategories()
-      this.isLoaded = true
-
-    }
-
-
-    this.route.params.subscribe(handleGetProduct)
+    // Subscribe means listening on a specific event, in this example the route changing triggers an event
+    this.route.params.subscribe(this.handleGetProduct)
   }
-  
-  async submit(): Promise<void> {
-    const produit = new Product({
-      nom: this.control["nomControl"].value,
-      category_id: this.control["categControl"].value,
-      prix: Number(this.control["prixControl"].value),
-      description: this.control["descControl"].value,
-      // image: this.imageFile,
+
+  // Using arrow function is helpfull to get self class refrerance "this" or using .bind in the constructor
+  private handleGetProduct = async (event) => {
+    // Set isLoaded to false means data not loaded yet from the db
+    // We can block the ui from any user interaction by showing loader/spinner, disable submit botton...
+    this.isLoaded = false
+    // Load categories from the db
+    this.categories = await this.categoryService.getCategories()
+    // Load the product by id from the db
+    this.item = await this.productService.getProductById(event.id)
+    // Update the form with the loaded product
+    this.productUpdateForm.patchValue({
+      nomControl: this.item.nom,
+      prixControl: this.item.prix,
+      descControl: this.item.description,
+      categControl: this.item.category_id
     })
+    // Set isLoaded to true means data is already loaded from the db.
+    // We can activate back the ability to interact with the ui.
+    this.isLoaded = true
+  }
+
+  async submit(): Promise<void> {
     try {
+      const produit = new Product({
+        nom: this.control["nomControl"].value,
+        category_id: this.control["categControl"].value,
+        prix: Number(this.control["prixControl"].value),
+        description: this.control["descControl"].value,
+        // image: this.imageFile,
+      })
+
+      // Take the update action
       await this.productService.updateProductById(this.item.id, produit)
-      this.router.navigate(["/admin/product", this.item.id])
+
+      // redirect the ui after the update 
+      this.router.navigate(['admin/products'])
     }
     catch (e) {
-
+      // Handle the error
     }
 
 

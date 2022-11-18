@@ -4,7 +4,6 @@ import { NgModule } from '@angular/core';
 import { AdminRoutingModule } from './admin-routing.module';
 import { AdminComponent } from './admin.component';
 import { GestprodModule } from './gestprod/gestprod.module';
-import { HomeadmModule } from './homeadm/homeadm.module';
 
 
 
@@ -15,9 +14,8 @@ import { HomeadmModule } from './homeadm/homeadm.module';
   imports: [
     CommonModule,
     AdminRoutingModule,
-    GestprodModule,
-    HomeadmModule,
+    GestprodModule
   ],
-   exports: [AdminComponent]
+  exports: []
 })
 export class AdminModule { }

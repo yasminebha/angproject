@@ -16,6 +16,7 @@ import { Control } from 'src/types';
   styleUrls: ['./product-add.component.css']
 })
 export class ProductAddComponent implements OnInit {
+  
   nomControl = new FormControl("");
   prixControl = new FormControl("");
   descControl = new FormControl("");
@@ -24,7 +25,6 @@ export class ProductAddComponent implements OnInit {
 
   productAddForm: FormGroup;
   control: Control
-
   categories: Array<Categorie> = []
 
   isLoading = false
@@ -101,7 +101,7 @@ export class ProductAddComponent implements OnInit {
       this.isLoading = false
 
       // redirect after finishing the create process
-      this.routerService.navigate(["/site/home"])
+      this.routerService.navigate(["admin/products"])
     } catch (e) {
       console.log(e)
     }

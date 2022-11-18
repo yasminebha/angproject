@@ -1,0 +1,34 @@
+<h2>Datatable</h2>
+<table class="table table-hover table-responsive ">
+    <thead>
+        <tr>
+            <th>#</th>
+            <th scope="col">ID</th>
+            <th scope="col">Title</th>
+            <th scope="col">description</th>
+            <th scope="col">Image</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let prod of products; let i = index" >
+
+            <th scope="row">{{i}}</th>
+            <td>{{prod.id}}</td>
+            <td>{{prod.nom}}</td>
+            <td>{{prod.description}}</td>
+            <td>{{prod.image}}</td>
+            
+            <td>
+                <a routerLink={{prod.id}}>details</a>&nbsp;
+                <a routerLink="{{prod.id}}/update">edit</a>&nbsp;
+                <a routerLink="{{prod.id}}/delete">delete</a>
+            </td>
+           
+        </tr>
+        
+       
+    </tbody>
+</table>
+<a routerLink="create"><button type="button" class="btn mt-2 btn-outline-primary"> Add product</button></a>
+

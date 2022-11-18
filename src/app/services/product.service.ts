@@ -50,21 +50,27 @@ export class ProductService {
   async addProduct(item: Product): Promise<void> {
 
     if (item.image !== null) {
-      try {
 
-        const imgFile = item.image as File
 
-        const result = await supabase.storage
-          .from("ang-project")
-          .upload(`produits/${imgFile.name.split(".")[0]}_${(Math.random() + 1).toString(36).substring(7)}.${imgFile.name.split(".")[1]}`, item.image, {
-            cacheControl: '3600',
-            upsert: false
-          })
+      const imgFile = item.image as File
 
-        item.image = `${environment.supabase.storageUrl}/${result.data.path}`
-      } catch (e) {
-        // display error in a popup
+      const path = `produits/${imgFile.name.split(".")[0]}_${(Math.random() + 1).toString(36).substring(7)}.${imgFile.name.split(".")[1]}`;
+
+
+      const { error } = await supabase.storage
+        .from("ang-project")
+        .upload(path, imgFile, {
+          cacheControl: '3600',
+          upsert: false
+        })
+
+
+      if (error) {
+        throw error
       }
+
+
+      item.image = `${environment.supabase.storageUrl}/${path}`;
 
     }
 
@@ -80,9 +86,15 @@ export class ProductService {
   }
 
   async updateProductById(id: number, item: Product): Promise<void> {
-    const {error} = await supabase.from("produits").update(item).eq("id", id)
+    const { error } = await supabase.from("produits").update(item).eq("id", id)
 
-    if(error)
+    if (error)
+      throw error
+
+  }
+  async deleteProductById(id: number): Promise<void> {
+    const { error } = await supabase.from("produits").delete().eq("id", id)
+    if (error)
       throw error
 
   }

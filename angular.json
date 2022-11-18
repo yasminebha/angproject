@@ -101,9 +101,8 @@
           "options": {
             "prerender": false,
             "ssr": false,
-            "browserTarget": "angproject:build:production",
-            "firebaseProject": "angproject-a66c3",
-            "firebaseHostingSite": "angproject-a66c3"
+            "browserTarget": "angproject:build:production"
+          
           }
         }
       }
