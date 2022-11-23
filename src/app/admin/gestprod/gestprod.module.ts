@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import { SidebarComponent } from '../sidebar/sidebar.component';
 
 import { DeleteProductComponent } from './delete-product/delete-product.component';
 import { GestprodRoutingModule } from './gestprod-routing.module';
@@ -13,7 +13,6 @@ import { ShowProductComponent } from './show-product/show-product.component';
 import { UpdateProductComponent } from './update-product/update-product.component';
 
 
-
 @NgModule({
   declarations: [
     GestprodComponent,
@@ -21,7 +20,10 @@ import { UpdateProductComponent } from './update-product/update-product.componen
     ShowProductComponent,
     UpdateProductComponent,
     DeleteProductComponent,
-    ProductListComponent
+    ProductListComponent,
+    SidebarComponent
+    
+
   ],
   imports: [
     FormsModule,

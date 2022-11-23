@@ -8,7 +8,7 @@ import { AdminComponent } from './admin.component';
 const routes: Routes = [
   { path: "", component: AdminComponent },
   {
-    path: "products",
+    path: "",
     loadChildren: () => import("./gestprod/gestprod.module").then(m => m.GestprodModule),
   }
 ]
@@ -17,3 +17,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AdminRoutingModule { }
+

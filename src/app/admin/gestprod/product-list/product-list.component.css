@@ -1,1 +1,17 @@
+.container{
+    margin: auto;
+}
+a{
+    cursor: pointer;
+}
+i{
+    color: rgb(83, 83, 83);
+}
+.dropdown-menu {
+  text-align: center;
+}
+th,td{
+    text-align: center;
+    word-wrap: none;
+}
 

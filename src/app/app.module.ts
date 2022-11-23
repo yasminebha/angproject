@@ -7,19 +7,23 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ClientModule } from './client/client.module';
 import { GestionErreurModule } from './gestion-erreur/gestion-erreur.module';
 import { AdminModule } from './admin/admin.module';
-import { CommonModule } from '@angular/common';
+
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
+  
+
   ],
   imports: [
-    CommonModule,
+  
     BrowserModule,
     AppRoutingModule,
     ClientModule,
     NgbModule,
+    
     AdminModule,
     GestionErreurModule,
   ],

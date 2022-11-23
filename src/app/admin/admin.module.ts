@@ -7,9 +7,13 @@ import { GestprodModule } from './gestprod/gestprod.module';
 
 
 
+
+
+
+
 @NgModule({
   declarations: [
-    AdminComponent
+    AdminComponent,
   ],
   imports: [
     CommonModule,

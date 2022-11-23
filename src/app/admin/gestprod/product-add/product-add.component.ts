@@ -101,7 +101,7 @@ export class ProductAddComponent implements OnInit {
       this.isLoading = false
 
       // redirect after finishing the create process
-      this.routerService.navigate(["admin/products"])
+      this.routerService.navigate(["admin/gestprod/products"])
     } catch (e) {
       console.log(e)
     }

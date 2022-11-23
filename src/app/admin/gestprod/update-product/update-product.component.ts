@@ -85,7 +85,7 @@ export class UpdateProductComponent implements OnInit {
       await this.productService.updateProductById(this.item.id, produit)
 
       // redirect the ui after the update 
-      this.router.navigate(['admin/products'])
+      this.router.navigate(['admin/gestprod/products'])
     }
     catch (e) {
       // Handle the error

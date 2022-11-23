@@ -38,7 +38,7 @@ export class DeleteProductComponent implements OnInit {
 
       await this.productService.deleteProductById(params.id)
 
-      this.router.navigate(["admin/products"])
+      this.router.navigate(["admin/gestprod/products"])
     } catch (e) {
       // Handle Error
     }

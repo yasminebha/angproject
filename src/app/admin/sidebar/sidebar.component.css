@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+#sidebar {
+    min-width: 270px;
+    max-width: 270px;
+    background: #422e79;
+    color: #fff;
+    transition: all .3s;
+    position: relative;
+}
+.p-4 {
+    padding: 1.5rem!important;
+}
+div{
+    display: block;
+}
+#sidebar h1 {
+    margin-bottom: 20px;
+    font-weight: 700;
+    font-size: 30px;
+    color: white;
+}
+#sidebar ul .components {
+    padding: 0;
+}
+.mb-5{
+    margin-bottom: 3rem!important;
+}
+.list-unstyled {
+    padding-left: 0;
+    list-style: none;
+}
+
+ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+#sidebar ul li {
+    font-size: 16px;
+}
+
+#sidebar ul li.active>a {
+    background: 0 0;
+    color: #fff;
+}
+#sidebar ul li a {
+    padding: 10px 0;
+    display: block;
+    text-decoration: none;
+    font-family: poppins,Arial,sans-serif;
+    border-bottom: 1px solid rgba(255,255,255,.1);
+}
+a {
+   
+    transition: .3s all ease;
+
+}
+a:-webkit-any-link {
+   
+    cursor: pointer;
+    
+}
+li {
+    text-align: -webkit-match-parent;
+    display: list-item;
+}
+#sidebar ul li a span {
+    color: #44bef1;
+}
+.wrapper{
+    width: 100%;
+}
+.align-items-stretch{
+    align-items: stretch!important;
+    -webkit-box-align: stretch!important
+}
+.d-flex{
+    display: flex!important;
+}
+#content {
+    width: 100%;
+    min-height: 100vh;
+    transition: all .3s;
+}
+.pt-5{
+    padding-top: 3rem!important;
+}
+h1, h2 {
+    line-height: 1.5;
+    font-weight: 400;
+    font-family: poppins,Arial,sans-serif;
+    color: #000;
+}
+.mb-4 {
+    margin-bottom: 1.5rem!important;
+}
+
+
+
