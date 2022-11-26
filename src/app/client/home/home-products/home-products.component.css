@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cookie&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Cookie&display=swap');
 .categories{
   overflow:hidden;
   margin-top: 10px;
@@ -89,4 +89,30 @@ p {
 }
 h4 {
   font-size: 24px;
+} */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+.carousel-inner{
+  margin-bottom: 60px;
+}
+*{
+  line-height: 24px;
+}
+.service-box{
+  border: 2px dotted rgb(189, 189, 189);
+  border-radius: 8px;
+  padding: 30px;
+  text-align: center;
+  width: 30%;
+  
+} 
+
+.service-box .service-text h4 {
+  font-family: 'Roboto', sans-serif; 
+  font-size: 15px;
+  margin: 0 0 5px;
+  font-weight: 800;
+  color: #333333;
+}
+.service-box .service-desc{
+  color: #666666;
 }

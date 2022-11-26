@@ -1,0 +1,24 @@
+.nav-tabs{
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+.container{
+    padding:0;
+}
+.nav-item {
+    width: 50%;
+    text-align: center;
+    background-color:#ebebeb ;
+   
+   
+}
+.nav-link {
+    border: none !important;
+    border-radius: 0;
+    color: #666666;
+    line-height:20px;
+
+}
+.nav-link:hover .nav-link :focus{
+    background-color: white;
+}

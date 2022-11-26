@@ -6,6 +6,7 @@ import { BannerComponent } from './banner/banner.component';
 import { ClientRoutingModule } from './client-routing.module';
 import { ClientComponent } from './client.component';
 import { HomeModule } from './home/home.module';
+import { AccountModule } from './account/account.module';
 
 
 
@@ -19,7 +20,8 @@ import { HomeModule } from './home/home.module';
     CommonModule,
     ClientRoutingModule,
     AboutModule,
-    HomeModule
+    HomeModule,
+    AccountModule
   ],
   exports: [
     ClientComponent

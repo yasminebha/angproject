@@ -7,7 +7,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ClientModule } from './client/client.module';
 import { GestionErreurModule } from './gestion-erreur/gestion-erreur.module';
 import { AdminModule } from './admin/admin.module';
-
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import {MatTabsModule} from '@angular/material/tabs';
 
 
 
@@ -23,9 +24,10 @@ import { AdminModule } from './admin/admin.module';
     AppRoutingModule,
     ClientModule,
     NgbModule,
-    
+    MatTabsModule,
     AdminModule,
     GestionErreurModule,
+    NoopAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

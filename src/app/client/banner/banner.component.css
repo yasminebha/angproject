@@ -1,8 +1,11 @@
-@media only screen and (min-width: 1200px) and (max-width: 1599px){
+/* @media only screen and (min-width: 1200px) and (max-width: 1599px){
   .header {
       padding: 0 30px;
   }
 
+}
+a{
+  text-decoration: none;
 }
 .header {
   background: #ffffff;
@@ -64,6 +67,7 @@ ul, ol {
   display: block;
   padding: 2px 0;
   position: relative;
+ 
 }
 .header__menu ul li .dropdown {
   position: absolute;
@@ -123,4 +127,51 @@ ul, ol {
   font-size: 18px;
   color: #111111;
   position: relative;
+} */
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+nav{
+  padding: 10px 0;
+  
+  
+}
+.navbar-toggler{
+  border: none;
+  border-color: #cba985;
+  
+}
+.navbar-toggler span i{
+  color: #cba985 ;
+  font-size: 30px;
+}
+#logo{
+  width:50px;
+   height:50px;
+}
+.navbar-brand{
+  width: 5%;
+}
+.navbar-items{
+  width: 90% !important;
+
+}
+.navbar-items ul li a {
+ margin-right:30px ;
+ font-size:15px;
+ font-weight: 25px;
+ font-family: 'Raleway', sans-serif;
+ 
+}
+.navbar-items ul li a:hover{
+  color: #cba985;
+  
+}
+.navbar-icons{
+  width: 15%;
+}
+.navbar-icons li a i{
+  color:#cba985 ;
+  width: 30px;
+  height: 30px;
+  font-size: inherit;
+  text-align: end;
 }
