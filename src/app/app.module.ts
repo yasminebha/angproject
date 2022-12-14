@@ -8,28 +8,25 @@ import { ClientModule } from './client/client.module';
 import { GestionErreurModule } from './gestion-erreur/gestion-erreur.module';
 import { AdminModule } from './admin/admin.module';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
-import {MatTabsModule} from '@angular/material/tabs';
+import { AuthGuard } from 'guards/auth.guard';
+
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-  
-
   ],
   imports: [
-  
     BrowserModule,
     AppRoutingModule,
     ClientModule,
     NgbModule,
-    MatTabsModule,
     AdminModule,
     GestionErreurModule,
     NoopAnimationsModule,
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

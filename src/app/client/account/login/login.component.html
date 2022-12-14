@@ -1,2 +1,16 @@
 
-<h1>login works</h1>
+<form  [formGroup]="loginForm" (ngSubmit)="signIn()" >
+    <div class="mb-3">
+        
+        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Email" formControlName="emailControl">
+      </div>
+      <div class="mb-4">
+        
+        <input type="password" class="form-control" id="exampleFormControlInput1" placeholder="Password" formControlName="passwordControl">
+      </div>
+      <button type="submit" class="btn sign-btn mb-4 " value="SIGN IN"><span>Sign In</span> </button>
+      <div class="forgot-pwd  w-50 m-auto">
+         <button  type="button" (click)="resetPassword()" class="btn forgot-btn w-100  " value="">Forgot your Password ? </button>
+    </div>
+     
+</form>

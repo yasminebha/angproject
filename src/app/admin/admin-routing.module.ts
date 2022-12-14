@@ -6,7 +6,7 @@ import { AdminComponent } from './admin.component';
 // Hint: using ":" refers to dynamic url param declaration, example :id or :product_id
 
 const routes: Routes = [
-  { path: "", component: AdminComponent },
+  { path: "admin", component: AdminComponent },
   {
     path: "",
     loadChildren: () => import("./gestprod/gestprod.module").then(m => m.GestprodModule),

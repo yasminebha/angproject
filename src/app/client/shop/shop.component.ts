@@ -1,23 +1,17 @@
-import { Component, OnInit } from '@angular/core';
-
-import { ProductService } from 'src/app/services/product.service';
-
-import { Product } from 'src/app/shared/models/produit';
-
-
-
+import { Component } from '@angular/core';
+import { ProductService } from 'services/product.service';
+import { Product } from 'shared/models/produit';
 @Component({
-  selector: 'app-home-products',
-  templateUrl: './home-products.component.html',
-  styleUrls: ['./home-products.component.css']
+  selector: 'app-shop',
+  templateUrl: './shop.component.html',
+  styleUrls: ['./shop.component.css']
 })
+export class ShopComponent {
 
-
-
-export class HomeProductsComponent implements OnInit {
   title = "PRODUITS";
   produits: Product[];
   selectedProd: Product;
+  isSelected:Boolean;
 
   constructor(private productService: ProductService) {
     this.productService;
@@ -31,10 +25,15 @@ export class HomeProductsComponent implements OnInit {
 
   ngOnInit(): void {
     this.getProducts();
+    this.isSelected=false
   }
 
   onSelectedProd(p: Product): void {
-    this.selectedProd = p;
+      this.selectedProd = p;
+      this.isSelected =true;
+   
+    
+    
   }
 
 
@@ -43,7 +42,4 @@ export class HomeProductsComponent implements OnInit {
     alert(item.description)
   }
 
-
-
 }
-

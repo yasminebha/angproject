@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 import { SidebarComponent } from '../sidebar/sidebar.component';
 
 import { DeleteProductComponent } from './delete-product/delete-product.component';

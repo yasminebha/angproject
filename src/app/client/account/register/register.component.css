@@ -1,0 +1,37 @@
+.form-control{
+    height: 40px;
+    border-radius: 2px;
+    border: 1px solid #e1e1e1;
+    color: #666;
+    padding: 9px 20px;
+    font-size: 14px;
+    line-height: 1.45;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+
+.form-control:focus{
+    box-shadow:none;
+    border: 2px solid #cba884 ;
+}
+.sign-btn{
+    width: 100%;
+    background-color:#111111 ;
+    color: white;
+    border-radius: 2px;
+    padding: 10px 30px;
+    
+}
+.sign-btn span{
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 24px;
+    font-family:'Roboto', sans-serif ;
+}
+.btn:hover{
+    
+    background-color:white ;
+    color: #cba884;
+    border-radius: 2px;
+    border: 1px solid #cba884 ;
+
+}

@@ -134,6 +134,8 @@ nav{
   
   
 }
+
+
 .navbar-toggler{
   border: none;
   border-color: #cba985;
@@ -166,12 +168,50 @@ nav{
   
 }
 .navbar-icons{
-  width: 15%;
+  width:25%;
 }
+
+.user-icon{
+  width: 50%;
+}
+#user-name{
+
+
+  text-decoration: none;
+  color: #7d7d7d;
+  font-size: 16px;
+  
+}
+#user-name span{
+  margin-left: 10px;
+}
+
+
 .navbar-icons li a i{
   color:#cba985 ;
-  width: 30px;
-  height: 30px;
+  
+ 
   font-size: inherit;
   text-align: end;
+}
+.dropdown-menu{
+  border: none;
+  border-radius: 2px;
+  padding: 10px 20px ;
+    margin-bottom: 0;
+    
+    box-shadow: 0 0 12px #0000001a;
+   
+}
+
+.dropdown-item{
+
+  padding: 0;
+  font-size: 14px;
+  line-height: 35px;
+  color: #7d7d7d;
+}
+.dropdown-item:hover{
+  background-color: white;
+  color:#cba985 ;
 }

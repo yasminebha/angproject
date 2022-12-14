@@ -1,0 +1,41 @@
+<div class="d-flex justify-content-around">
+
+
+
+    <div class="containers">
+        <div class="row">
+
+            <div *ngFor="let prod of produits" class="col">
+                <div class="card" style="width: 18rem;">
+                    <img [src]="prod.image" class="card-img-top shadow-sm" alt="...">
+                    <div class="overlay-right">
+                        <button  (click)="onSelectedProd(prod)"  type="button" class="btn btn-secondary">
+                            <i class="fa-solid fa-eye"></i>
+                        </button>
+                        <button type="button" class="btn btn-secondary">
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                        <button type="button" class="btn btn-secondary">
+                            
+                                <a routerLink="/"><i class="fa-solid fa-cart-plus"></i></a>
+                        </button>
+
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">{{prod.nom}}</h5>
+                        <span class="price">{{prod.prix}} TND</span>
+
+                    </div>
+                </div>
+
+         
+            </div>
+        </div>
+    </div>
+
+
+    
+    
+</div>
+
+

@@ -7,21 +7,25 @@ import { ClientRoutingModule } from './client-routing.module';
 import { ClientComponent } from './client.component';
 import { HomeModule } from './home/home.module';
 import { AccountModule } from './account/account.module';
+import { ShopModule } from './shop/shop.module';
 
 
+ 
 
 
 @NgModule({
   declarations: [
     ClientComponent,
-    BannerComponent
+    BannerComponent,
+   
   ],
   imports: [
     CommonModule,
     ClientRoutingModule,
     AboutModule,
     HomeModule,
-    AccountModule
+    AccountModule,
+    ShopModule
   ],
   exports: [
     ClientComponent

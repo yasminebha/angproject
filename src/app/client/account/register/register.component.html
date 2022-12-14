@@ -1,1 +1,23 @@
-<p>register works!</p>
+
+<form  [formGroup]="registerForm" (ngSubmit)="signUp()">
+    <div class="row mb-3 register-form">
+        <div class="col">
+          <input type="text" class="form-control" placeholder="First name" formControlName="firstNameControl" aria-label="First name">
+        </div>
+        <div class="col">
+          <input type="text" class="form-control" placeholder="Last name" formControlName="lastNameControl"aria-label="Last name">
+        </div>
+      </div>
+    <div class="mb-3">
+        
+        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Email" formControlName="emailControl">
+      </div>
+      <div class="mb-3">
+        
+        <input type="password" class="form-control" id="exampleFormControlInput1" placeholder="Password" formControlName="passwordControl">
+      </div>
+      <button type="submit" class="btn sign-btn mt-2
+       " value=""><span>Create An Account</span> </button>
+   
+     
+</form>
